@@ -3,7 +3,6 @@
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <label>hiram</label>
     <ListView [items]="items" class="list-group">
         <ng-template let-item="item">
             <Label [nsRouterLink]="[item.id]" [text]='item.id + ": "+ item.nombre' class="list-group-item"></Label>
