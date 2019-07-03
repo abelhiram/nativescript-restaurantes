@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Page } from "tns-core-modules/ui/page";
+
 
 @Component({
     selector: "Search",
@@ -6,11 +8,19 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./search.component.html"
 })
 export class SearchComponent implements OnInit {
-    constructor() {
-        // Use the constructor to inject services.
+
+    
+
+    constructor(private page: Page) {
+   
     }
 
-    ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
+
+
+    ngOnInit():any {
+        //this.page.actionBarHidden = true;
     }
+    
+
+
 }
