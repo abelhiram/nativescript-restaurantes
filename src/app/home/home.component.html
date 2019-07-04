@@ -2,15 +2,31 @@
     <Label class="action-bar-title" text="Restaurantes"></Label>
 </ActionBar>
  
-<GridLayout class="page page-content">
-    <ListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            
-            <!--<Label [nsRouterLink]="[item.id]" [text]='item.id + ": "+ item.nombre' class="list-group-item"></Label>-->
-            <Image [nsRouterLink]="[item.id]" [src]="item.imagen_destacada" stretch="none" class="img-rounded p-l-15 p-r-15 p-t-15"></Image>
-            
-        </ng-template>
+<GridLayout tkExampleTitle tkToggleNavButton>
+    <ListView [items]="items" marginRight="-2">
+        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
+            itemHeight="200" spanCount="1">
+        </ListViewGridLayout>
+        <ng-template tkListItemTemplate let-item="item">
+                <GridLayout backgroundColor="White">
+                    <GridLayout>
+                        <android>
+                            <Image src="{{ item.imagen_destacada }}" stretch="aspectFill"
+                                height="180"></Image>
+                            <!-- <FrescoDrawee horizontalAlignment="stretch" height="180"
+                                imageUri="{{ item.imageSrc }}"></FrescoDrawee> -->
+                        </android>
+                        <GridLayout verticalAlignment="bottom">
+                            <StackLayout paddingTop="8" paddingBottom="8"
+                                paddingLeft="16" paddingRight="16">
+                                <Label text="{{ item.nombre }}" ></Label>
+                                <Label text="{{ item.activo }}" ></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </ng-template>
     </ListView>
-
+</GridLayout>
 
  
