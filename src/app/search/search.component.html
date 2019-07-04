@@ -1,12 +1,15 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="registro"></Label>
+    <Label class="action-bar-title" text="Restaurantes get post"></Label>
 </ActionBar>
-
-<GridLayout rows="auto, *">
-    <StackLayout>
-        <RadListView>
-    
-        </RadListView>
-    </StackLayout>
-</GridLayout>
-
+<StackLayout class="input-field">
+        <Button text="Presioname" (tap)="test()" height="10%" width="100%" ></Button>
+        <TextField #secondTx [(ngModel)]="getData" autocorrect="false" returnKeyType="done"
+        class="input input-border" height="10%" width="100%"></TextField>
+        <ListView [items]="items" marginRight="-2">
+            <ng-template tkListItemTemplate let-item="item">
+                <android>
+                    <Label text="{{ item.nombre }}" ></Label>
+                </android>
+            </ng-template>
+        </ListView>
+</StackLayout>
